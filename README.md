@@ -1,30 +1,98 @@
-# React + TypeScript + Vite
+# React Authentication with Protected Routes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React application demonstrating user authentication with protected routes. The project uses React Router DOM for routing and Vite as the build tool.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Components](#components)
+- [Context](#context)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the repository:**
 
-- Configure the top-level `parserOptions` property like this:
+   ```bash
+   git clone https://github.com/aliseyedabady/react-router-dom-auth-ts.git
+   cd your-repository
+   ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Build the project for production:**
+
+   ```bash
+   npm run build
+   ```
+
+5. **Preview the production build:**
+
+   ```bash
+   npm run preview
+   ```
+
+## Usage
+
+After starting the development server, you can access the application at http://localhost:5173.
+
+### Authentication Flow
+
+- Navigate to /login to log in.
+- Upon logging in, you will be redirected to the home page.
+- If you are logged in and try to access the login page, you will be redirected to the home page.
+
+## Folder Structure
+
+```
+public
+src/
+├── components/
+│ └── protectedRoute.tsx
+├── context/
+│ └── auth.tsx
+├── hooks/
+│ └── useAuth.ts
+├── layouts/
+│ └── main.tsx
+├── pages/
+│ ├── home
+│ └── login
+├── router/
+│ └── index.tsx
+├── App.tsx
+├── main.tsx
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Components
+
+- protectedRoute.tsx: Component to protect routes.
+
+## Context
+
+- AuthContext.tsx: Provides authentication context to manage login state and protect routes.
+
+## Contributing
+
+1. **Fork the repository:**
+2. **Create a new branch (git checkout -b feature/your-feature).**
+3. **Commit your changes (git commit -m 'Add your feature').**
+4. **Push to the branch (git push origin feature/your-feature).**
+5. **Open a pull request.**
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
